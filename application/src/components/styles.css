@@ -40,6 +40,16 @@
   font-family: "Ubuntu", "Roboto", sans-serif;
 }
 
+.linkToDetail{
+  text-align: center;
+  padding: 10px 30px;
+  margin-top: 15px;
+  font-size: 18px;
+  border: 1px solid #1f54c0;
+  border-radius: 7px;
+  color: #1f54c0;
+}
+
 footer{
   text-align: center;
   margin: 30px 0 15px;

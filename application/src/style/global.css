@@ -1,6 +1,12 @@
 body{
   font-family: "Roboto", sans-serif;
 }
+
 .title{
   font-family: "Ubuntu", "Roboto", sans-serif;
+  color: #000;
+}
+
+a{
+  text-decoration: none;
 }

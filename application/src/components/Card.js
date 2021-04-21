@@ -1,34 +1,28 @@
 import React from 'react';
 import { Grid, Paper, Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 import DefaulImage from 'assets/products/antiques.jpg';
 
 const Card = ({ product }) => {
-  return(
+  return (
     <Grid item xs={12} sm={4}>
       <Paper className="productItem">
-        <img  alt={product.image} src={DefaulImage} className="productImage" />
+        <img alt={product.name} src={DefaulImage} className="productImage" />
         <div className="productDescription">
-          <h2 className="title">{product.name}</h2>
+          <Link className="linkBid" to={`/products/${product.id}`}><h2 className="title">{product.name}</h2></Link>
           <p className="description">{product.description}</p>
-          <span className="counter">Expired at 1 day</span>
 
           <Grid
             container
             direction="row"
-            justify="space-between"
+            justify="center"
             alignItems="center"
           >
-            <Grid item>
-              <p>Minimum from bid: ${product.initialBid}</p>
-            </Grid>
-            <Grid item>
-              <Button variant="contained" color="primary" className="buttonBid">
-                BID
-              </Button>
-            </Grid>
+            <Link className="linkToDetail" to={`/products/${product.id}`}>
+              See product
+            </Link>
           </Grid>
-
         </div>
       </Paper>
     </Grid>

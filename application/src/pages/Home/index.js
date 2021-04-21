@@ -5,7 +5,6 @@ import api from 'services/api';
 import Layout from 'components/Layout';
 import Search from 'components/Search';
 import Card from 'components/Card';
-// import CardProduct from 'components/CardProduct';
 
 const Home = () => {
 
