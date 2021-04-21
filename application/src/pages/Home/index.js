@@ -9,19 +9,26 @@ import Card from 'components/Card';
 const Home = () => {
 
   const [products, setProducts] = useState();
+  const [allProducts, setAllProducts] = useState();
+
   useEffect(() => {
     const getProducts = async () => {
       const response = await api.get('products');
       await setProducts(response.data.data);
+      await setAllProducts(response.data.data);
     }
 
     getProducts();
   }, []);
 
+  const setSearchProducts = (data) => {
+    setProducts(data);
+  }
+
   return(
     <>
       <Layout>
-        <Search />
+        <Search setProducts={setSearchProducts} allProducts={allProducts} />
         <Container className="productList">
           <Grid container spacing={3}>
             {products && (
