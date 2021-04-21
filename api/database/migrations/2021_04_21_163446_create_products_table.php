@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('image');
             $table->double('initial_bid', 8, 2)->default(1);
             $table->dateTime('expired_time');
-            $table->boolean('isExpired')->default(false);
+            $table->boolean('is_expired')->default(false);
             $table->timestamps();
         });
     }
