@@ -16,7 +16,7 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description');
+            $table->longText('description');
             $table->string('image');
             $table->double('initial_bid', 8, 2)->default(1);
             $table->dateTime('expired_time');

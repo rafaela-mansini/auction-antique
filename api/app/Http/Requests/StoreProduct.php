@@ -25,7 +25,7 @@ class StoreProduct extends FormRequest
     {
         return [
             'name' => 'required',
-            'description' => 'required|max:255',
+            'description' => 'required|max:500',
             'imageFile' => 'required',
             'expired_time' => 'required'
         ];
