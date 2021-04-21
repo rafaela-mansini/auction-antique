@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\API\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +17,7 @@ use App\Http\Controllers\ProductsController;
 */
 
 
-Route::post('products', [ProductsController::class, 'store']);
+Route::get('products', [ProductsController::class, 'index']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
