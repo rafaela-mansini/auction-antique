@@ -3,6 +3,7 @@ import { Grid, Container } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 import Logo from 'assets/logo.png';
+import ButtonLogout from 'components/ButtonLogout';
 
 const Navbar = () => {
   return(
@@ -18,6 +19,7 @@ const Navbar = () => {
             <Link to="/">
               <img src={Logo} alt="Logotype from company" />
             </Link>
+            <ButtonLogout />
           </Grid> 
         </Container>
       </div>
