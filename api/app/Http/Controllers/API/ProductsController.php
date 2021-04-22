@@ -30,4 +30,8 @@ class ProductsController extends Controller
             ->get();
         return new ProductsCollection($products);
     }
+
+    public function show($id){
+        return response()->json(['data' => Products::find($id)]);
+    }
 }

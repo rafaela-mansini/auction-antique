@@ -1,0 +1,43 @@
+.title{
+  margin: 40px 0 80px;
+  font-size: 50px;
+}
+
+.productImage{
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.description{
+  text-align: justify;
+  font-size: 23px;
+  margin-top: 0;
+}
+
+.expireDate{
+  color: #f00;
+  font-size:18px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.buttonsBid{
+  margin-top:30px;
+}
+
+.buttonsBid button{
+  font-size: 20px;
+}
+
+.details{
+  min-height: 780px;;
+}
+
+.priceBid p{
+  margin-bottom: 5px;
+  font-family: "Ubuntu", "Roboto", sans-serif;
+  font-size: 30px;
+}
