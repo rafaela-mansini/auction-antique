@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core';
-import Alert from '@material-ui/lab/Alert'
+import Alert from '@material-ui/lab/Alert';
 import CurrencyTextField from '@unicef/material-ui-currency-textfield';
 
 const ButtonBid = ({ product }) => {
