@@ -21,7 +21,7 @@ const Login = () => {
       setInvalidUser(true);
     } else {
       setInvalidUser(false);
-      localStorage.setItem('@auction/user', response.data.data);
+      localStorage.setItem('@auction/user', response.data.data.id);
       setUserLogged(true);
     }
   }

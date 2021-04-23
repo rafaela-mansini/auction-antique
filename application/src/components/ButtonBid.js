@@ -3,23 +3,43 @@ import { Button, Dialog, DialogActions, DialogContent, DialogContentText, Dialog
 import Alert from '@material-ui/lab/Alert';
 import CurrencyTextField from '@unicef/material-ui-currency-textfield';
 
+import api from 'services/api';
+
 const ButtonBid = ({ product }) => {
 
   const [bid, setBid] = useState(product.initial_bid);
+  const [errorMessage, setErrorMessage] = useState('');
   const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
   const [open, setOpen] = useState(false);
 
   const handleOpenDialog = () => setOpen(true);
   const handleCloseDialog = () => setOpen(false);
-  const handleBidAmount = (e) => setBid(e.target.value);
+  const handleBidAmount = (e) => setBid(parseFloat(e.target.value));
 
-  const makeBid = () => {
-    if(product.initial_bid > bid){
+  const makeBid = async () => {
+    if(product.initial_bid >= bid){
+      setErrorMessage(`There an error occurred: Your bit must be greater than ${product.initial_bid}!`);
       setError(true);
     }
     else{
-      setError(false);
-      console.log('making a bid');
+      // console.log('is NOT bigger');
+      // setError(false);
+      const user = localStorage.getItem('@auction/user');
+      const response = await api.post('make-bid', {bid, product_id: product.id, user_id: user});
+      console.log(response.data.data);
+      if(response.data.data.error){
+        setErrorMessage(`There an error occurred: ${response.data.data.error}!`);
+        setError(true);
+      }else{
+        setSuccess(true);
+        setError(false);
+        setTimeout(() => {
+          handleCloseDialog();
+          setError(false);
+          setSuccess(false);
+        }, 2500);
+      }
     }
   }
 
@@ -37,7 +57,10 @@ const ButtonBid = ({ product }) => {
       <Dialog open={open} onClose={handleCloseDialog} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Make a bid</DialogTitle>
         {error &&(
-          <Alert severity="error">There an error occurred: Your bit must be greater than ${product.initial_bid}!</Alert>
+          <Alert severity="error">{errorMessage}</Alert>
+        )}
+        {success &&(
+          <Alert severity="success">The bid was made.</Alert>
         )}
         <DialogContent>
           <DialogContentText>
