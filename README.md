@@ -36,12 +36,16 @@ Clone this repository and make sure that the items on requirements section it's 
     ```
     php artisan key:generate
     php artisan storage:link
+    php artisan migrate
+    php artisan db:seed
     ```
     And start your server: 
     ```
     php artisan serve
     ```
     **NOTE:** To your client side running, it's necessary the server side is running to (make sure the `php artisan serve` it's running and the port is `http://127.0.0.1:8000`)
+    **NOTE:** When your run the seed command, automatic will be created in your database the products and users. You have two users (user1, user2) to login on the system.
+
 - ### CLIENT SIDE:
     To install the packages, open the folder application and in your terminal:
     ```
