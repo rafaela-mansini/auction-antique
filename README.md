@@ -20,6 +20,7 @@ Those were the technologies used:
 - List product detail;
 - Makes a bid to the product;
 - Automatic bids;
+- Expired time counter in seconds for product bid;
 
 ## Requirements
 - Server side: PHP (7.2) | Database relational (recomend MySql or PostgreSQL) | Composer | Apache (server to run PHP);
@@ -61,9 +62,9 @@ Clone this repository and make sure that the items on requirements section it's 
 ## Know improvments
 To better the system, some features needs to be implemented:
 - Insert a paginate on products page (show 10 itens per page);
-- Make an expired time counter for product bid;
+- Format the counter for product bid;
 - Implements unit tests;
-- 
+
 ## License and credits
 
 MIT
