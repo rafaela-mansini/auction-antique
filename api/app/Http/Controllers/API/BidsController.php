@@ -35,8 +35,16 @@ class BidsController extends Controller
         try {
             $validate = $request->validated();
             $lastBid = Bids::select('bid')->whereProductId($validate['product_id'])->orderBy('bid', 'desc')->first();
+            if(empty($lastBid->bid)){
+                $product = Products::find($validate['product_id']);
+                $lastBidAmount = $product->initial_bid;
+            }
+            else{
+                $lastBidAmount = $lastBid->bid + 1;
+            }
+
             $bid = Bids::create([
-                'bid' => $lastBid->bid + 1,
+                'bid' => $lastBidAmount,
                 'product_id' => $validate['product_id'],
                 'user_id' => $validate['user_id']
             ]);

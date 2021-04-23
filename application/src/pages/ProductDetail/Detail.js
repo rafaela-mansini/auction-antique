@@ -16,7 +16,7 @@ const Detail = ({ product }) => {
       <span className="expireDate">Exipre at: {product.expired_time}</span>
       <Grid item spacing={3} className="buttonsBid" container justify="space-between" alignItems="flex-end">
         <ButtonBid product={product} initialBid={initialBid} />
-        <ButtonAutomaticBid />
+        <ButtonAutomaticBid product={product} />
       </Grid>
      
     </Grid>

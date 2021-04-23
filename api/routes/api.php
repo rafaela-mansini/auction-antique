@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\ProductsController;
 use App\Http\Controllers\API\LoginController;
 use App\Http\Controllers\API\BidsController;
+use App\Http\Controllers\API\UsersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ use App\Http\Controllers\API\BidsController;
 */
 
 Route::post('login', [LoginController::class, 'login']);
+
+Route::post('users/balance', [UsersController::class, 'balance']);
 
 Route::get('products', [ProductsController::class, 'index']);
 Route::post('products/search', [ProductsController::class, 'search']);
