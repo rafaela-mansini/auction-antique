@@ -25,6 +25,7 @@ Route::post('products/search', [ProductsController::class, 'search']);
 Route::get('products/{id}', [ProductsController::class, 'show']);
 
 Route::post('make-bid', [BidsController::class, 'store']);
+Route::post('automate-bid', [BidsController::class, 'automate']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
