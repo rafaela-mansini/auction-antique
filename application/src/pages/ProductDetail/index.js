@@ -20,7 +20,7 @@ const ProductDetail = () => {
     }
   
     getProduct();
-  },[]);
+  }, []);
 
   return(
     <Layout>

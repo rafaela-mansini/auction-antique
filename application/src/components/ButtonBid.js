@@ -5,9 +5,9 @@ import CurrencyTextField from '@unicef/material-ui-currency-textfield';
 
 import api from 'services/api';
 
-const ButtonBid = ({ product }) => {
+const ButtonBid = ({ product, initialBid }) => {
 
-  const [bid, setBid] = useState(product.initial_bid);
+  const [bid, setBid] = useState(initialBid);
   const [errorMessage, setErrorMessage] = useState('');
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
@@ -32,10 +32,8 @@ const ButtonBid = ({ product }) => {
         setSuccess(true);
         setError(false);
         setTimeout(() => {
-          handleCloseDialog();
-          setError(false);
-          setSuccess(false);
-        }, 2500);
+          window.location.reload();
+        }, 1000);
       }
     }
   }

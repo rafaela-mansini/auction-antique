@@ -16,7 +16,7 @@ const Navbar = () => {
             justify="space-between"
             alignItems="center"
           >
-            <Link to="/">
+            <Link to="/products">
               <img src={Logo} alt="Logotype from company" />
             </Link>
             <ButtonLogout />

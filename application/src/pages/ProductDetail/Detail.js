@@ -5,15 +5,17 @@ import ButtonBid from 'components/ButtonBid';
 import ButtonAutomaticBid from 'components/ButtonAutomaticBid';
 
 const Detail = ({ product }) => {
+  const initialBid = product.last_bid.bid ? product.last_bid.bid : product.initial_bid;
+
   return(
     <Grid container spacing={3} className="detail">
        <Grid item className="priceBid">
-        <p>Current bid: ${product.initial_bid}</p>
+        <p>Current bid: ${initialBid}</p>
       </Grid>
       <p className="description">{product.description}</p>
       <span className="expireDate">Exipre at: {product.expired_time}</span>
       <Grid item spacing={3} className="buttonsBid" container justify="space-between" alignItems="flex-end">
-        <ButtonBid product={product} />
+        <ButtonBid product={product} initialBid={initialBid} />
         <ButtonAutomaticBid />
       </Grid>
      

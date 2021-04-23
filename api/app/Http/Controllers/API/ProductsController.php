@@ -32,6 +32,7 @@ class ProductsController extends Controller
     }
 
     public function show($id){
-        return response()->json(['data' => Products::find($id)]);
+        $product = Products::whereId($id)->with('lastBid')->first();
+        return response()->json(['data' => $product]);
     }
 }
