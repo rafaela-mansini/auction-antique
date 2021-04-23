@@ -23,11 +23,8 @@ const ButtonBid = ({ product }) => {
       setError(true);
     }
     else{
-      // console.log('is NOT bigger');
-      // setError(false);
       const user = localStorage.getItem('@auction/user');
       const response = await api.post('make-bid', {bid, product_id: product.id, user_id: user});
-      console.log(response.data.data);
       if(response.data.data.error){
         setErrorMessage(`There an error occurred: ${response.data.data.error}!`);
         setError(true);
