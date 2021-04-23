@@ -5,7 +5,7 @@ import ButtonBid from 'components/ButtonBid';
 import ButtonAutomaticBid from 'components/ButtonAutomaticBid';
 
 const Detail = ({ product }) => {
-  const initialBid = product.last_bid.bid ? product.last_bid.bid : product.initial_bid;
+  const initialBid = product.last_bid ? product.last_bid.bid : product.initial_bid;
 
   return(
     <Grid container spacing={3} className="detail">

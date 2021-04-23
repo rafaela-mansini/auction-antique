@@ -18,7 +18,7 @@ const ButtonBid = ({ product, initialBid }) => {
   const handleBidAmount = (e) => setBid(parseFloat(e.target.value));
 
   const makeBid = async () => {
-    if(product.initial_bid >= bid){
+    if(initialBid >= bid){
       setErrorMessage(`There an error occurred: Your bit must be greater than ${product.initial_bid}!`);
       setError(true);
     }
