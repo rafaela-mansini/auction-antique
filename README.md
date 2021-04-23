@@ -10,7 +10,7 @@ Those were the technologies used:
 - [Javascript] - https://developer.mozilla.org/en-US/docs/Web/JavaScript
 - [React.js] - https://reactjs.org/
 - [Composer] - https://getcomposer.org/
-- [MySql] - https://www.mysql.com/
+- [PostgreSQL] - https://www.postgresql.org/
 
 ## Features
 
@@ -22,7 +22,7 @@ Those were the technologies used:
 - Automatic bids;
 
 ## Requirements
-- Server side: PHP (7.2) | Database relational (recomend MySql) | Composer | Apache (server to run PHP);
+- Server side: PHP (7.2) | Database relational (recomend MySql or PostgreSQL) | Composer | Apache (server to run PHP);
 - Client side: Javascript navigator (recomends Google Chrome) | Yarn;
 
 ## Installation
