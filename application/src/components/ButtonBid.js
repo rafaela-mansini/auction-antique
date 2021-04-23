@@ -19,7 +19,7 @@ const ButtonBid = ({ product, initialBid }) => {
 
   const makeBid = async () => {
     if(initialBid >= bid){
-      setErrorMessage(`There an error occurred: Your bit must be greater than ${product.initial_bid}!`);
+      setErrorMessage(`There an error occurred: Your bid must be greater than ${product.initial_bid}!`);
       setError(true);
     }
     else{
@@ -46,7 +46,7 @@ const ButtonBid = ({ product, initialBid }) => {
         className="buttonBid"
         onClick={handleOpenDialog}
       >
-        BID
+        BID NOW
       </Button>
 
       <Dialog open={open} onClose={handleCloseDialog} aria-labelledby="form-dialog-title">
@@ -78,7 +78,7 @@ const ButtonBid = ({ product, initialBid }) => {
             Cancel
           </Button>
           <Button onClick={makeBid} color="primary">
-            Make a Bid
+            Submit bid
           </Button>
         </DialogActions>
       </Dialog>

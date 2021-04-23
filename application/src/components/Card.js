@@ -20,7 +20,7 @@ const Card = ({ product }) => {
             alignItems="center"
           >
             <Link className="linkToDetail" to={`/products/${product.id}`}>
-              See product
+              Bid Now
             </Link>
           </Grid>
         </div>
